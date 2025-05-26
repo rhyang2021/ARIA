@@ -29,7 +29,6 @@ Large language models (LLMs) have enabled agents to perform complex reasoning an
 To address this, we propose **ARIA**, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. **ARIA** aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
 
 Extensive experiments demonstrate that **ARIA** not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
-
 <div align="center">
 <img width="860" alt="image" src="./figures/main.png">
 </div>
