@@ -24,17 +24,17 @@
 
 ## Introduction
 
-Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings large reward variance, hindering effective reinforcement learning (RL).
+Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings *large reward variance*, hindering *effective reinforcement learning*.
 
 To address this, we propose **ARIA**, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. **ARIA** aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
 
 Extensive experiments demonstrate that **ARIA** not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
 
 <div align="center">
-<img width="825" alt="image" src="./figures/main.png">
-</div>
 
-This repository contains the implementation of ARIA, a framework for Training Language Agents with Intention-Driven Reward Aggregation.
+<img width="825" alt="image" src="./figures/main.png">
+
+</div>
 
 ## Installation
 
@@ -170,4 +170,21 @@ We train a reward model (RM) using past rollout results from the actor (updated 
 ```bash
 cd scripts
 bash train_rm.sh
+```
+
+## Contact
+
+If you have any questions, please feel free to [email](mailto:rhyang17@fudan.edu.cn) me or drop me an issue.
+
+## Citation
+```
+@article{yang2024selfgoallanguageagentsknow,
+      title={ARIA: Training Language Agents with Intention-Driven Reward Aggregation}, 
+      author={Yang, Ruihan and Zhang, Yikai and Chen, Aili and Wang, Xintao and Yuan, Siyu and Chen, Jiangjie and Yang, Deqing and Xiao, Yanghua},
+      year={2025},
+      eprint={eprint},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/id}, 
+}
 ```
