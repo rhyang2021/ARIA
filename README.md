@@ -30,7 +30,7 @@ To address this, we propose **ARIA**, a method that Aggregates Rewards in Intent
 
 Extensive experiments demonstrate that **ARIA** not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
 <div align="center">
-<img width="840" alt="image" src="./figures/main.png">
+<img width="820" alt="image" src="./figures/main.png">
 </div>
 
 ## Installation
