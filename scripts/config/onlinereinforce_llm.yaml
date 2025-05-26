@@ -1,0 +1,37 @@
+defaults:
+  - default
+  - _self_
+
+# checkpoint
+checkpoint_path: null
+save_path: ''
+
+# env
+env_name: twenty_questions
+env_load_path: '../dataset/20q_t5_oracle.pt'
+env_type: single
+
+# model
+agent_type: 'online_reinforce'
+policy_lm: 'meta-llama/Meta-Llama-3-8B'
+max_new_tokens: 256
+use_lora: True
+eos_str: null
+
+capacity: 100000 #replay buffer size
+rollout_size: 16 #number of rollout trajectories for each update
+batch_size: 4
+iterations: 200 #total number of iterations
+actor_epochs: 1 #number of epochs for the actor each iteration
+warmup_iter: 0 #number of iterations without updating the policy
+grad_accum_steps: 2
+do_sample: True
+temperature: 1.0
+lm_lr: 3e-6
+env_idx: null #set to null if don't want to reset to a specific environment
+max_grad_norm: 1.0
+
+# wandb logging
+use_wandb: True
+project_name: ''
+run_name: ''

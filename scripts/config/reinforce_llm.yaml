@@ -1,0 +1,27 @@
+defaults:
+  - default
+  - _self_
+
+# checkpoint
+checkpoint_path: null
+save_path: '../models/'
+data_load_path: '../dataset/actor_reinforce_llama3-8b_multi.json'
+
+# model
+agent_type: 'offline_reinforce'
+policy_lm : 'meta-llama/Meta-Llama-3-8B'
+max_new_tokens: 256
+use_lora: True
+eos_str: null
+
+batch_size: 4
+actor_epochs: 3 #number of epochs for the actor each iteration
+warmup_iter: 0 #number of iterations without updating the policy
+grad_accum_steps: 2
+lm_lr: 2e-6
+max_grad_norm: 1.0
+
+# wandb logging
+use_wandb: True
+project_name: ''
+run_name: ''

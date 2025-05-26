@@ -1,0 +1,2 @@
+from .reinforce_trainer import ReinforceTrainer
+from .online_reinforce_trainer import OnlineReinforceTrainer
