@@ -1,6 +1,41 @@
+<div align="center">
+
 # ARIA: Training Language Agents with Intention-Driven Reward Aggregation
 
-This repository contains the implementation of ARIA, a framework for Training Language Agents with Intention-Driven Reward Aggregation.
+
+<div>
+  <a href='https://scholar.google.com/citations?user=asTSVwQAAAAJ&hl=en' target='_blank'><b>Ruihan Yang</b></a><sup>1</sup>&emsp;
+  <a href='https://ykzhang721.github.io/' target='_blank'><b>Yikai Zhang</b></a><sup>2</sup>&emsp;
+  <a href='https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=en' target='_blank'><b>Aili Chen</b></a><sup>3</sup>&emsp;
+</div>
+<div><sup>1</sup>Fudan University</div>
+
+<div>
+
+<h4>
+
+![](https://img.shields.io/badge/PRs-welcome-brightgreen) 
+<img src="https://img.shields.io/badge/Version-1.0-blue.svg" alt="Version">
+<img src="https://img.shields.io/github/stars/rhyang2021/LoGU?color=yellow" alt="Stars">
+<img src="https://img.shields.io/github/issues/rhyang2021/LoGU?color=red" alt="Issues">
+
+</h4>
+</div>
+</div> <!-- 关闭外层的居中div -->
+
+
+## Introduction
+
+Large language models (LLMs) have enabled agents to perform complex reasoning and decision-making through free-form language interactions. However, in open-ended language action environments (e.g., negotiation or question-asking games), the action space can be formulated as a joint distribution over tokens, resulting in an extremely large and combinatorial action space. Sampling actions in such a space can lead to extreme reward sparsity, which brings *large reward variance*, hindering *effective reinforcement learning*.
+
+To address this, we propose **ARIA**, a method that Aggregates Rewards in Intention space to enable efficient and effective language Agents training. **ARIA** aims to project natural language actions from the high-dimensional joint token distribution space into a low-dimensional intention space, where semantically similar actions are clustered and assigned shared rewards. This intention-aware reward aggregation reduces reward variance by densifying reward signals, fostering efficient and effective policy optimization.
+
+Extensive experiments demonstrate that **ARIA** not only significantly reduces gradient variance, but also delivers substantial performance gains of average 9.95% across four downstream tasks (e.g., negotiation and text-based games), consistently outperforming strong offline and online RL baselines.
+
+
+<div align="center">
+<img width="810" alt="image" src="./figures/main.png">
+</div>
 
 ## Installation
 
