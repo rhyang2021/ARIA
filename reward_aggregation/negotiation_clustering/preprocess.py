@@ -1,7 +1,7 @@
 import json
 
 game_id = 0
-with open("llama3-8b_negotiation_embedding_msgs.jsonl", 'r') as infile, open("llama3-8b_negotiation_embedding_msgs_game.jsonl", "w") as outfile:
+with open("../../dataset/llama3-8b_negotiation_embedding_msgs.jsonl", 'r') as infile, open("llama3-8b_negotiation_embedding_msgs_game.jsonl", "w") as outfile:
     for line in infile:
         data = json.loads(line)
         data0 = {}

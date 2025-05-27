@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 def add_game_ids():
     print("Starting to add game IDs...")
     game_id = 0
-    with open("llama3-8b_bargaining_embedding_msgs.jsonl", 'r') as infile, open("llama3-8b_bargaining_embedding_msgs_game.jsonl", "w") as outfile:
+    with open(f"../../dataset/llama3-8b_bargaining_embedding_msgs.jsonl", 'r') as infile, open(f"../dataset/llama3-8b_bargaining_embedding_msgs_game.jsonl", "w") as outfile:
         for line in infile:
             data = json.loads(line)
             data0 = {}
@@ -24,7 +24,7 @@ def add_game_ids():
 # Part 2: Extract Alice and Bob's actions, create action list with IDs
 def create_action_list():
     print("Starting to create action list...")
-    with open('llama3-8b_bargaining_embedding_msgs_game.jsonl', 'r') as infile, open('action_list_with_id.jsonl', 'w') as outfile:
+    with open(f'../dataset/llama3-8b_bargaining_embedding_msgs_game.jsonl', 'r') as infile, open(f'../dataset/action_list_with_id.jsonl', 'w') as outfile:
         for line in infile:
             # Parse each line of JSON
             data = json.loads(line.strip())
@@ -66,7 +66,7 @@ def create_action_list():
 # Part 3: Format IDs and create new file
 def format_ids():
     print("Starting to format IDs...")
-    with open('llama3-8b_bargaining_embedding_msgs_game.jsonl', 'r') as infile, open('bargaining_with_formatted_ids.jsonl', 'w') as outfile:
+    with open(f'../dataset/llama3-8b_bargaining_embedding_msgs_game.jsonl', 'r') as infile, open(f'../dataset/bargaining_with_formatted_ids.jsonl', 'w') as outfile:
         for line in infile:
             # Parse each line of JSON
             data = json.loads(line.strip())

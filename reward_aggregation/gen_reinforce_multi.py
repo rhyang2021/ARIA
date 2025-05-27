@@ -7,16 +7,16 @@ from typing import List, Dict, Any
 from collections import defaultdict
 from tqdm import tqdm
 from prompt_base import INSTRUCT_BARGAIN_SYSTEM, INSTRUCT_NEGO_BUYER_SYSTEM, INSTRUCT_NEGO_SELLER_SYSTEM
-sys.path.append("/path/to/your/NLGames/utils")
+sys.path.append("/apdcephfs_cq11/share_1567347/share_info/rhyang/ARIA/reward_aggregation")
 from reward_utils import get_single_values, get_multi_values
 
 
 # Constants definition
-DATA_DIR = "/path/to/your/NLGames/data/train"
-GAMES = ['bargaining', 'negotiation']
+DATA_DIR = "../dataset"
+GAMES = ['negotiation']
 n_rollout = 0
 reward = 'q'
-OUTPUT_PATH = f"{DATA_DIR}/actor_reinforce_llama3-8b_gamma_0.001_multi_{reward}_filter_{n_rollout}.json"
+OUTPUT_PATH = f"{DATA_DIR}/actor_reinforce_llama3-8b_multi.json"
 
 def process_alice_interactions(result: Dict[str, Any], alice_rewards: Dict[str, float]) -> List[Dict[str, Any]]:
     outputs = []
@@ -104,7 +104,7 @@ def main():
     for game in GAMES:
         print(f"Processing game: {game}")
         # Load data
-        input_file = f"{DATA_DIR}/llama3-8b_gamma_0.001_{game}_embedding_msgs_with_labels_{reward}.jsonl"
+        input_file = f"{DATA_DIR}/llama3-8b_{game}_embedding_msgs_with_labels.jsonl"
         with open(input_file) as f:
             results = [json.loads(line) for line in f]
         

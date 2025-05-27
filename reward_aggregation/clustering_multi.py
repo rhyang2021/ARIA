@@ -616,9 +616,9 @@ def main():
     parser = argparse.ArgumentParser(description="Analyze change rates of Alice and Bob in different environments")
     parser.add_argument("--env", default="negotiation", choices=["bargaining", "negotiation"],
                         help="Specify environment name (bargaining or negotiation)")
-    parser.add_argument("--data_path", default="/path/to/your/data/cluster/6_scenarios_k2_to_100", type=str,
+    parser.add_argument("--data_path", default="/path/to/your/dataset", type=str,
                         help="Path to JSONL data file")
-    parser.add_argument("--output_dir",type=str, default="/path/to/your/output/figures_test", 
+    parser.add_argument("--output_dir",type=str, default="/path/to/your/dataset", 
                         help="Output directory path")
     parser.add_argument("--index_range", type=str, default="2-50",
                         help="Specify index range to analyze, format 'start_index-end_index', default '2-100'")

@@ -2,7 +2,7 @@ import json
 
 game_id = 0  # Please ensure this variable is defined
 
-with open("llama3-8b_twenty_questions_embedding_msgs.jsonl", 'r') as infile, open("llama3-8b_twenty_questions_embedding_msgs_game.jsonl", "w") as outfile:
+with open("../../dataset/llama3-8b_twenty_questions_embedding_msgs.jsonl", 'r') as infile, open("llama3-8b_twenty_questions_embedding_msgs_game.jsonl", "w") as outfile:
     for line_num, line in enumerate(infile, 1):
         try:
             data = json.loads(line)

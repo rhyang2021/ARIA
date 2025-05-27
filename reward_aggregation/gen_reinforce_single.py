@@ -11,11 +11,11 @@ sys.path.append("/path/to/your/NLGames/utils")
 from reward_utils import get_single_values, get_multi_values
 
 # Constants definition
-DATA_DIR = "/path/to/your/NLGames/data/train"
+DATA_DIR = "../../data"
 n_rollout = 0
 reward = 'q'
 GAMES = ['twenty_questions', 'guess_my_city']
-OUTPUT_PATH = f"{DATA_DIR}/actor_reinforce_llama3-8b_online_iter2_single_{reward}_filter_{n_rollout}.json"
+OUTPUT_PATH = f"{DATA_DIR}/actor_reinforce_llama3-8b_single.json"
 
 def process_interactions(result: Dict[str, Any], rewards: Dict[str, float], game) -> List[Dict[str, Any]]:
     """
@@ -96,7 +96,7 @@ def main():
     for game in GAMES:
         print(f"Processing game: {game}")
         # Load data
-        input_file = f"{DATA_DIR}/llama3-8b_online_iter2_{game}_embedding_msgs_with_labels_{reward}.jsonl"
+        input_file = f"{DATA_DIR}/llama3-8b_{game}_embedding_msgs_with_labels.jsonl"
         with open(input_file) as f:
             results = [json.loads(line) for line in f]
         

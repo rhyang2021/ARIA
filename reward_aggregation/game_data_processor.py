@@ -219,8 +219,8 @@ def process_twenty_questions_example():
     env = "twenty_questions"
     k = 36
     
-    input_file = f"llama3-8b_iter2_{env}_online_with_labels_k2_to_k100.jsonl"
-    output_file = f"llama3-8b_online_iter2_{env}_embedding_msgs_with_labels_q.jsonl"
+    input_file = f"llama3-8b_{env}_with_labels_k2_to_k100.jsonl"
+    output_file = f"llama3-8b_{env}_embedding_msgs_with_labels_q.jsonl"
     
     process_twenty_questions(input_file, output_file, k)
 
