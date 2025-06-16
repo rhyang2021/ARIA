@@ -5,8 +5,8 @@
 
 <div>
   <a href='https://scholar.google.com/citations?user=asTSVwQAAAAJ&hl=en' target='_blank'><b>Ruihan Yang</b></a><sup>1</sup>&emsp;
-  <a href='https://ykzhang721.github.io/' target='_blank'><b>Yikai Zhang</b></a><sup>2</sup>&emsp;
-  <a href='https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=en' target='_blank'><b>Aili Chen</b></a><sup>3</sup>&emsp;
+  <a href='https://ykzhang721.github.io/' target='_blank'><b>Yikai Zhang</b></a><sup>1</sup>&emsp;
+  <a href='https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=en' target='_blank'><b>Aili Chen</b></a><sup>1</sup>&emsp;
 </div>
 <div><sup>1</sup>Fudan University</div>
 
