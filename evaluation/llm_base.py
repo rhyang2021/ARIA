@@ -36,12 +36,10 @@ def llm_openai(prompt: List[Dict[str, str]], model: str):
     return None
 
 
-def vllm(prompt: List[Dict[str, str]], model: str, port=8031, temperature=0) -> str:
+def vllm(prompt: List[Dict[str, str]], model: str, base_url="http://localhost:8031", temperature=0) -> str:
     
     model_id = "model_path"
-    base_url = f"http://localhost:{port}/v1"
-    
-    client = OpenAI(base_url=base_url, api_key="EMPTY")
+    client = OpenAI(base_url=f"{base_url}/v1", api_key="EMPTY")
 
     for i in range(5):
         try:

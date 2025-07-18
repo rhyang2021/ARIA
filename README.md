@@ -5,8 +5,8 @@
 
 <div>
   <a href='https://scholar.google.com/citations?user=asTSVwQAAAAJ&hl=en' target='_blank'><b>Ruihan Yang</b></a><sup>1</sup>&emsp;
-  <a href='https://ykzhang721.github.io/' target='_blank'><b>Yikai Zhang</b></a><sup>2</sup>&emsp;
-  <a href='https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=en' target='_blank'><b>Aili Chen</b></a><sup>3</sup>&emsp;
+  <a href='https://ykzhang721.github.io/' target='_blank'><b>Yikai Zhang</b></a><sup>1</sup>&emsp;
+  <a href='https://scholar.google.com/citations?user=FAJzMAQAAAAJ&hl=en' target='_blank'><b>Aili Chen</b></a><sup>1</sup>&emsp;
 </div>
 <div><sup>1</sup>Fudan University</div>
 
@@ -172,3 +172,35 @@ We train a reward model (RM) using past rollout results from the actor (updated 
 cd scripts
 bash train_rm.sh
 ```
+
+## Evaluation
+
+To evaluate your model in single-agent environments (e.g., **Twenty Questions**, **Guess My City**), follow these steps:
+
+### Step 1: Launch the model with vLLM
+
+First, make sure your model is served using [vLLM](https://github.com/vllm-project/vllm). Here's an example command:
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m model_path --port 8036 --tensor-parallel-size 4 --gpu_memory_utilization 0.6
+```
+
+* Replace `model_path` with your actual model module or entry point.
+* The model will be accessible at `http://localhost:8036`.
+
+### Step 2: Run the evaluation script
+
+Navigate to the `evaluation` directory and execute the evaluation script:
+
+```bash
+cd evaluation
+bash eval.sh
+```
+
+The script does the following:
+
+* Evaluates the model on two environments: `twenty_questions` and `guess_my_city`.
+* Sends requests to the vLLM server via the specified `BASE_URL`.
+* Uses the model named `llama3-8B` (you can change this by editing `MODEL_NAME` in `eval.sh`).
+* Repeats each evaluation 200 times.
+* Saves results to `../results/single_agent/llama3-8B`.

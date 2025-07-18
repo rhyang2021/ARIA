@@ -47,7 +47,10 @@ def main(args):
         while not done:
             steps += 1
             # print(f"Environment stpes {str(steps)}")
-            action = vllm(prompt = next_obs, model=args.model_id, port=args.model_port, temperature=0)
+            action = vllm(prompt = next_obs, 
+                        model=args.model_id, 
+                        base_url=args.base_url, 
+                        temperature=0)
             _return = env._step(question=action)
             next_obs, answer, r, done = _return
             new_item = {"instruction": init[0]['content'],
@@ -74,7 +77,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate embeddings")
     parser.add_argument("--env_name", type=str, default="twenty_questions", help="Dataset for trajectories")
     parser.add_argument("--model_id", type=str, default="llama3-8B")
-    parser.add_argument("--model_port", type=int, default=8035)
+    parser.add_argument("--base_url", type=int, default="http://localhost:8031")
     parser.add_argument("--repeat", type=int, default=1000)
     parser.add_argument("--output_dir", type=str, default="../results")
     args = parser.parse_args()
