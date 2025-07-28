@@ -104,12 +104,12 @@ python game_data_processor.py {environment} {input_file} {output_file}
 python game_data_processor.py bargaining \
     llama3-8b_bargaining_with_labels_k2_to_k100.jsonl \
     llama3-8b_bargaining_with_selected_labels.jsonl \
-    --alice-k 36 --bob-k 36
+    --alice-k 20 --bob-k 20
 
 python game_data_processor.py negotiation \
     llama3-8b_negotiation_with_labels_k2_to_k100.jsonl \
     llama3-8b_negotiation_with_selected_labels.jsonl \
-    --alice-k 20 --bob-k 20
+    --alice-k 16 --bob-k 16
 
 # Single-agent with action/observation clustering
 python game_data_processor.py guess_my_city \
