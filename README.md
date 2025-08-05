@@ -34,7 +34,7 @@ Extensive experiments demonstrate that **ARIA** not only significantly reduces g
 
 
 <div align="center">
-<img width="810" alt="image" src="./figures/main.png">
+<img width="810" alt="image" src="./figures/main.pdf">
 </div>
 
 ## Installation
