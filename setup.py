@@ -8,7 +8,6 @@ setuptools.setup(
     name="aria",
     version='0.1.0',
     url="",
-    author=("Ruihan Yang"),
     description="Research code for ARIA (Training Language Agents with Intention-Driven Reward Aggregation)",
     long_description=open("README.md", "r", encoding='utf-8').read(),
     long_description_content_type="text/markdown",
